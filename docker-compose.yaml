@@ -7,7 +7,7 @@ volumes:
     # external: true
 networks:
    open5gs:
-      driver: sergiogimenez/vale:latest
+      driver: bridge
       enable_ipv6: false
       ipam:
         driver: default
@@ -38,6 +38,7 @@ services:
       - mongodb
       environment:
       - DB_URI=mongodb://mongodb/open5gs
+      - NODE_ENV=develop
       # - WAIT_HOSTS=mongodb:27017
 
       networks:
